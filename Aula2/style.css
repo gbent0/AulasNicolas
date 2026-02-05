@@ -85,6 +85,16 @@
     justify-content: end;
 }
 
+.qq{
+    display: flex;
+    justify-content: center;
+}
+
+.qqq{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .metade{
     height: 50%;
@@ -92,4 +102,8 @@
 
 .coluna{
     flex-direction: column;
+}
+
+.terco{
+    height: 33,3333%;
 }
