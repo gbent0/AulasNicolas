@@ -1,5 +1,13 @@
-.square{
-    height: 200px;
-    width: 200px;
-    background-color: blueviolet;
+.bonito{
+    font-weight: bold;
+    color: rgb(255, 0, 200);
+}
+
+.fundocor{
+    background-color: black;
+}
+
+.alinhar{
+    justify-content: center;
+    align-items: center;
 }
