@@ -10,6 +10,18 @@ async function fetchData() {
 
 async function setData(){
     await fetchData();
+
+    const teste = users.map((user) => {
+        let postList = []
+        posts.map((post) => {
+            if (user.id == post.userId){
+                return postList.push({postId: post.id, postTitle: post.postTitle, postBody: post.body})
+            }
+        })
+        return { userId: user.id, name: user.name, userPosts: postList }
+    })
+    
+    console.log(teste)
 }
 
 setData();
