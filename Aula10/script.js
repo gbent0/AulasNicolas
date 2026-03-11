@@ -1,0 +1,24 @@
+let data = [] 
+
+async function  fetchData() {
+    const response = await fetch("https://servicodados.ibge.gov.br/api/v1/localidades/distritos")
+    data = await response.json()
+    console.log(data) 
+}
+
+async function setData(){
+    await fetchData();
+
+   const reduceData = data.reduce((acc, value) => {
+    if(value.municipio?.microrregiao?.mesorregiao?.UF?.sigla == "PR"){
+        return acc + 1;
+    }
+    else{
+        return acc;
+    }
+   }, 0)
+
+   Element.innerHTML = reduceData
+}
+
+setData()
