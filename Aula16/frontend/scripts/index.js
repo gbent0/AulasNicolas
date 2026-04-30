@@ -1,7 +1,13 @@
 const form = document.getElementById("form")
+<<<<<<< HEAD
 const formatt = document.getElementById("formatt")
 
 form.addEventListener('submit', async (e) => {
+=======
+
+
+form.addEventListener('submit', async(e) => {
+>>>>>>> dfc36f79b9e82647517f1cb37557811a02cb97d0
     e.preventDefault()
     const nome = document.getElementById("nome").value
     const email = document.getElementById("email").value
@@ -10,8 +16,12 @@ form.addEventListener('submit', async (e) => {
 
     const response = await fetch('http://localhost:8080/registro', {
         method: 'POST',
+<<<<<<< HEAD
         headers: {
             'Content-Type': 'application/json'
+=======
+        headers:{'Content-type': 'application/json'
+>>>>>>> dfc36f79b9e82647517f1cb37557811a02cb97d0
         },
         body: JSON.stringify({
             nome: nome,
@@ -25,6 +35,7 @@ form.addEventListener('submit', async (e) => {
     carregarUsuarios();
 })
 
+<<<<<<< HEAD
 formatt.addEventListener('submit', async (e) => {
     e.preventDefault()
     const id = document.getElementById("idatt").value
@@ -65,27 +76,39 @@ async function atualizarUsuario(id, nome, email, senha) {
 
 
 async function carregarUsuarios(){
+=======
+async function carregarUsuarios() {
+>>>>>>> dfc36f79b9e82647517f1cb37557811a02cb97d0
     const response = await fetch('http://localhost:8080/usuarios');
     const usuarios = await response.json();
 
     const tbody = document.getElementById('listaUsuarios');
 
+<<<<<<< HEAD
     tbody.innerHTML = ""
 
+=======
+>>>>>>> dfc36f79b9e82647517f1cb37557811a02cb97d0
     usuarios.forEach(user => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${user.nome}</td>
             <td>${user.email}</td>
+<<<<<<< HEAD
             <td>
                 <button onclick="deletarUsuario(${user.id})">Deletar</button>
                 <button onclick="atualizarUsuario('${user.id}', '${user.nome}', '${user.email}', '${user.senha}')">Atualizar</button>
             </td>
         `
+=======
+        `
+
+>>>>>>> dfc36f79b9e82647517f1cb37557811a02cb97d0
         tbody.appendChild(tr)
     });
 }
 
+<<<<<<< HEAD
 async function deletarUsuario(id) {
     const response = await fetch(`http://localhost:8080/deletar/${id}`, {
         method: 'DELETE', 
@@ -93,6 +116,8 @@ async function deletarUsuario(id) {
     carregarUsuarios();
 }
 
+=======
+>>>>>>> dfc36f79b9e82647517f1cb37557811a02cb97d0
 window.onload = () => {
     carregarUsuarios();
 }
