@@ -5,7 +5,7 @@ const router = express.Router();
 
 router
     .get('/users', getPeople)
-    .post('/register')
+    // .post('/register')
 
 export default router
 
@@ -40,5 +40,5 @@ export default router
 //         }
 //     })
 
-export default router
+// export default router
 
